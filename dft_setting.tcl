@@ -1,0 +1,6 @@
+#dft_setting.tcl
+set_scan_configuration -style multiplexed_flip_flop
+set_app_var test_default_delay 0
+set_app_var test_default_bidir_delay 0
+set_app_var test_default_strobe 40
+set_app_var test_default_period 100
