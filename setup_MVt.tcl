@@ -5,12 +5,9 @@ set search_path		"$dc_path/sc9_base_hvt
 						$dc_path/sc9_base_rvt
 						$dc_path/sc9_base_lvt
 						$search_path"
-set target_library   "$dc_path/sc9_base_hvt/sc9_cln40g_base_hvt_ss_typical_max_0p81v_125c.db
-					$dc_path/sc9_base_hvt/sc9_cln40g_base_hvt_ss_typical_max_0p81v_m40c.db
-					$dc_path/sc9_base_rvt/sc9_cln40g_base_rvt_ss_typical_max_0p81v_125c.db
-					$dc_path/sc9_base_rvt/sc9_cln40g_base_rvt_ss_typical_max_0p81v_m40c.db
-					$dc_path/sc9_base_lvt/sc9_cln40g_base_lvt_ss_typical_max_0p81v_125c.db
-					$dc_path/sc9_base_lvt/sc9_cln40g_base_lvt_ss_typical_max_0p81v_m40c.db"
+set target_library   "$dc_path/sc9_base_hvt/sc9_cln40g_base_hvt_tt_typical_max_0p90v_25c.db
+					$dc_path/sc9_base_rvt/sc9_cln40g_base_rvt_tt_typical_max_0p90v_25c.db
+					$dc_path/sc9_base_lvt/sc9_cln40g_base_lvt_tt_typical_max_0p90v_25c.db"
 set link_library     "* $target_library dw_foundation.sldb"
 set symbol_library   "generic.sdb"
 set synthetic_library "dw_foundation.sldb"

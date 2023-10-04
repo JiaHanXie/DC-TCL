@@ -3,8 +3,7 @@ set company "CIC"
 set designer "Student"
 set search_path		"$dc_path/sc9_base_rvt
 						$search_path"
-set target_library   "$dc_path/sc9_base_rvt/sc9_cln40g_base_rvt_ss_typical_max_0p81v_125c.db
-					$dc_path/sc9_base_rvt/sc9_cln40g_base_rvt_ss_typical_max_0p81v_m40c.db"
+set target_library   "$dc_path/sc9_base_rvt/sc9_cln40g_base_rvt_tt_typical_max_0p90v_25c.db"
 set link_library     "* $target_library dw_foundation.sldb"
 set symbol_library   "generic.sdb"
 set synthetic_library "dw_foundation.sldb"

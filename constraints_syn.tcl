@@ -15,28 +15,34 @@ set_ideal_network [get_ports rst]
 						-max_library sc9_cln40g_base_hvt_ss_typical_max_0p81v_125c -max ss_typical_max_0p81v_125c
 #set_operating_conditions -max_library sc9_cln40g_base_hvt_ss_typical_max_0p81v_125c -max ss_typical_max_0p81v_125c
 if {$MultiVt == 0} {
-	set_operating_conditions -min_library sc9_cln40g_base_hvt_ss_typical_max_0p81v_m40c -min ss_typical_max_0p81v_m40c \
+	#set_operating_conditions -min_library sc9_cln40g_base_hvt_ss_typical_max_0p81v_m40c -min ss_typical_max_0p81v_m40c \
 		-max_library sc9_cln40g_base_hvt_ss_typical_max_0p81v_125c -max ss_typical_max_0p81v_125c
+	set_operating_conditions -max_library sc9_cln40g_base_hvt_tt_typical_max_0p90v_25c -max tt_typical_max_0p90v_25c
 } elseif {$MultiVt == 1} {
-	set_operating_conditions -min_library sc9_cln40g_base_lvt_ss_typical_max_0p81v_m40c -min ss_typical_max_0p81v_m40c \
+	#set_operating_conditions -min_library sc9_cln40g_base_lvt_ss_typical_max_0p81v_m40c -min ss_typical_max_0p81v_m40c \
 		-max_library sc9_cln40g_base_hvt_ss_typical_max_0p81v_125c -max ss_typical_max_0p81v_125c
+	set_operating_conditions -max_library sc9_cln40g_base_rvt_tt_typical_max_0p90v_25c -max tt_typical_max_0p90v_25c
 } elseif {$MultiVt == 2} {
-	set_operating_conditions -min_library sc9_cln40g_base_lvt_ss_typical_max_0p81v_m40c -min ss_typical_max_0p81v_m40c \
+	#set_operating_conditions -min_library sc9_cln40g_base_lvt_ss_typical_max_0p81v_m40c -min ss_typical_max_0p81v_m40c \
 		-max_library sc9_cln40g_base_lvt_ss_typical_max_0p81v_125c -max ss_typical_max_0p81v_125c
+	set_operating_conditions -max_library sc9_cln40g_base_lvt_tt_typical_max_0p90v_25c -max tt_typical_max_0p90v_25c
 } elseif {$MultiVt == 3} {
-	set_operating_conditions -min_library sc9_cln40g_base_rvt_ss_typical_max_0p81v_m40c -min ss_typical_max_0p81v_m40c \
+	#set_operating_conditions -min_library sc9_cln40g_base_rvt_ss_typical_max_0p81v_m40c -min ss_typical_max_0p81v_m40c \
 		-max_library sc9_cln40g_base_hvt_ss_typical_max_0p81v_125c -max ss_typical_max_0p81v_125c
+	set_operating_conditions -max_library sc9_cln40g_base_rvt_tt_typical_max_0p90v_25c -max tt_typical_max_0p90v_25c
 } elseif {$MultiVt == 4} {
-	set_operating_conditions -min_library sc9_cln40g_base_rvt_ss_typical_max_0p81v_m40c -min ss_typical_max_0p81v_m40c \
+	#set_operating_conditions -min_library sc9_cln40g_base_rvt_ss_typical_max_0p81v_m40c -min ss_typical_max_0p81v_m40c \
 		-max_library sc9_cln40g_base_rvt_ss_typical_max_0p81v_125c -max ss_typical_max_0p81v_125c
+	set_operating_conditions -max_library sc9_cln40g_base_rvt_tt_typical_max_0p90v_25c -max tt_typical_max_0p90v_25c
 } else {
 	echo "Error! MVt not set!"
 }
+#
 #Need Input pad information
 set_drive 0.005 [all_inputs]
 set_drive 0.0 {clk rst}
 set_max_fanout 32 [all_inputs]
-#40 for TSRI, 10 for PCB, 0.03 for IO pad, 0.005 for submodule, 0 for research
+#40 for TSRI, 10 for PCB, 0.03 for IO pad, 0.005 for submodule
 set_load 0.03 [all_outputs]
 #Don't touch the basic env setting as below#
 set_input_delay 0.0 -clock clk [all_inputs]
